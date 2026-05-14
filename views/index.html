@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Razas de perros</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="toolbar" aria-labelledby="page-title">
+        <div>
+          <h1 id="page-title">Razas de perros</h1>
+          <p id="total-info" class="total-info">Cargando informacion...</p>
+        </div>
+
+        <div class="controls">
+          <input
+            type="search"
+            id="filter-input"
+            placeholder="Buscar raza o subraza..."
+            class="filter-input"
+            aria-label="Buscar raza o subraza"
+          />
+
+          <button id="asc-btn" class="btn btn-primary" type="button">A-Z</button>
+          <button id="desc-btn" class="btn btn-primary" type="button">Z-A</button>
+          <button
+            id="favorites-filter-btn"
+            class="btn btn-primary"
+            type="button"
+            aria-pressed="false"
+          >
+            Favoritos (0)
+          </button>
+          <button id="clear-favorites-btn" class="btn btn-ghost" type="button" disabled>
+            Limpiar favoritos
+          </button>
+          <button id="random-image-btn" class="btn btn-primary" type="button">
+            Imagen aleatoria
+          </button>
+          <button id="theme-toggle-btn" class="btn btn-ghost" type="button">
+            Modo oscuro
+          </button>
+        </div>
+      </section>
+
+      <section class="preview" aria-live="polite">
+        <div>
+          <p id="status-message">Preparando datos...</p>
+          <p id="results-info" class="results-info"></p>
+          <div class="image-actions">
+            <button id="copy-image-btn" class="btn btn-ghost" type="button" disabled>
+              Copiar enlace
+            </button>
+            <a id="download-image-link" class="btn btn-ghost is-disabled" href="#" download>
+              Descargar imagen
+            </a>
+          </div>
+        </div>
+        <img id="image-preview" hidden />
+      </section>
+
+      <section class="history-panel" aria-labelledby="history-title">
+        <div class="section-heading">
+          <h2 id="history-title">Historial de imagenes</h2>
+          <button id="clear-history-btn" class="btn btn-ghost" type="button" disabled>
+            Limpiar historial
+          </button>
+        </div>
+        <div id="history-list" class="history-list"></div>
+        <p id="history-empty-message" class="muted-message">
+          Las imagenes que veas apareceran aqui.
+        </p>
+      </section>
+
+      <section
+        id="breeds-info"
+        class="breeds-container"
+        aria-label="Listado de razas"
+      ></section>
+      <p id="empty-message" class="empty-message" hidden>
+        No hay razas que coincidan con el filtro actual.
+      </p>
+    </main>
+
+    <script src="/app-utils.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
